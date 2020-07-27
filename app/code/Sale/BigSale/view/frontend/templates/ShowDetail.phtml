@@ -1,10 +1,49 @@
-<?php 
+
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+</style>
+
+<h1>Focuse on text of button</h1>
+
+<button class="button">Click to change me</button>
 
 
+<script>
+require(['jquery'],function(){
+    jQuery(document).ready(function() {
+        jQuery(".button").click(function(){
+            
+            var text = jQuery(".button").text();
 
-?>
+            var url = "<?php echo $block->getBaseUrl().'ajaxtutorial/result/result/' ?>";
+            jQuery.ajax({
+            url: url,
+            type: "POST",
+            data: {text:text},
+            showLoader: true,
+            cache: false,
+            success: function(response){
+                console.log(response.output);
+                jQuery(".button").text(response.output);
+            }
+            
+        });
+        return false;
+        });
+    });
+});
 
+</script>
 
-<h1><?= $block->getAttribute(158) ?></h1>
 
 

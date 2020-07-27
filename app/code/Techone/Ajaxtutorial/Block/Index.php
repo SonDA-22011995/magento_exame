@@ -1,10 +1,11 @@
 <?php
-namespace Sale\BigSale\Block;
+
+namespace Techone\Ajaxtutorial\Block;
 
 use \Magento\Framework\View\Element\Template;
 use \Magento\Framework\View\Element\Template\Context;
 
-class ShowDetail extends Template
+class Index extends Template
 {
 
     public function __construct(Context $context,      
@@ -18,21 +19,15 @@ class ShowDetail extends Template
     public function getBaseUrl()
     {
         return $this->_storeManager->getStore()->getBaseUrl();
-	}
-	public function gettextdata()
-	{
-		# code...
-		return $this->getText();
-	}
+    }
 
-    // public function getNumoneData()
-    // {
-    //     return $this->getNumone();
-    // }
+    public function getNumoneData()
+    {
+        return $this->getNumone();
+    }
 
-    // public function getNumtwoData()
-    // {
-    //     return $this->getNumtwo();
-    // }
+    public function getNumtwoData()
+    {
+        return $this->getNumtwo();
+    }
 }
-?>

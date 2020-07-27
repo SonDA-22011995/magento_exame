@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace Sale\BigSale\Setup;
+namespace Learning\ClothingMaterial\Setup;
 
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -41,15 +41,15 @@ class InstallData implements InstallDataInterface
         $eavSetup = $this->eavSetupFactory->create();
         $eavSetup->addAttribute(
             \Magento\Catalog\Model\Product::ENTITY,
-            'big_sale',
+            'clothing_material',
             [
                 'group' => 'General',
                 'type' => 'varchar',
-                'label' => 'Sale up to 60%',
+                'label' => 'Clothing Material',
                 'input' => 'select',
-                'source' => 'Sale\BigSale\Model\Attribute\Source\Material',
-                'frontend' => 'Sale\BigSale\Model\Attribute\Frontend\Material',
-                'backend' => 'Sale\BigSale\Model\Attribute\Backend\Material',
+                'source' => 'Learning\ClothingMaterial\Model\Attribute\Source\Material',
+                'frontend' => 'Learning\ClothingMaterial\Model\Attribute\Frontend\Material',
+                'backend' => 'Learning\ClothingMaterial\Model\Attribute\Backend\Material',
                 'required' => false,
                 'sort_order' => 50,
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,

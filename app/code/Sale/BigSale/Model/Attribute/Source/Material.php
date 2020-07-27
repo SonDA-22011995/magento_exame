@@ -15,8 +15,8 @@ class Material extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
     public function getAllOptions()
     {
         if (!$this->_options) {
-            $this->_options = [
-                ['label' => __('Yes'), 'value' => 'Sale up to 60%'],
+            $this->_options = [             
+                ['label' => __('Yes'), 'value' =>'Sale up to 60%'],
                 ['label' => __('No'), 'value' => 'No available'],
             ];
         }
